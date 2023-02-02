@@ -3,7 +3,9 @@
 /*const form = document.querySelector('.js-add-form');
 form.classList.remove('collapsed');*/
 
-document.querySelector('.js-list');
+/* llamamaos al html, hay que poner siempre primero*/
+const list= document.querySelector('.js-list'); 
+
 const kittenOne = `<li class="card">
             <article>
               <img
@@ -51,6 +53,6 @@ const kittenThree = `li class="card">
             </p>
           </li>`;
 
+/* para mostart el html siembre va al final*/
 
-const cats = document.querySelector('.js-list');
-cats.innerHTML = 'kittenOne + kittenTwo + kittenThree';
+list.innerHTML = kittenOne + kittenTwo + kittenThree;
