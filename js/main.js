@@ -8,6 +8,30 @@ const list= document.querySelector('.js-list');
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
 
+const addCat =  document.querySelector('.js-add');
+const ulMenu = document.querySelector(".js-new-form");
+
+addCat.addEventListener('click', (event) =>  {
+  event.preventDefault();
+  console.log('Hola');
+  if (ulMenu.classList.contains('collapsed')) {
+       ulMenu.classList.remove('collapsed');
+} else {
+     ulMenu.classList.add('collapsed');
+}
+}); 
+
+const btnAdd = document.querySelector(".js-btn-add");
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+
+btnAdd.addEventListener('click', (event) => {
+    event.preventDefault(); 
+
+});
+
 
 
 const kittenOneImage = 'https://dev.adalab.es/gato-siames.webp';
@@ -87,3 +111,4 @@ if( kittenTwoDesc.includes(descrSearchText) ) {
 if( kittenThreeDesc.includes(descrSearchText) ) {
 list.innerHTML= kittenThree
 }
+
