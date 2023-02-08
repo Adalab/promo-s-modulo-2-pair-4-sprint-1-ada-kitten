@@ -7,12 +7,13 @@ form.classList.remove('collapsed');*/
 const list= document.querySelector('.js-list'); 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
-//const addCat =  document.querySelector('.js-add');
+const addCat =  document.querySelector('.js-add');
 //const ulMenu = document.querySelector(".js-new-form");
 const btnAdd = document.querySelector(".js-btn-add");
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
+const inputRace = document.querySelector(' .js-input-race');
 const labelMessageError = document.querySelector('.js-label-error');
 const error = document.querySelector(".js-label-error");
 /*
@@ -26,7 +27,8 @@ addCat.addEventListener('click', (event) =>  {
 }
 });
 */
-btnAdd.addEventListener('click', (event) => {
+
+function addNewKitten(event) {
   event.preventDefault(); 
   const valueDesc = inputDesc.value;
   const valuePhoto = inputPhoto.value;
@@ -36,8 +38,31 @@ if (valueDesc === '' || valuePhoto === '' || valueName === '') {
   error.innerHTML = `¡Uy! parece que has olvidado algo`;
 } else {
   error.innerHTML = `Muy bien!`; /*aquí hay que añadir los nuevos gatos*/
+  //renderKitten()
 }
-});
+};
+function renderKitten(url, desc, name, race) {
+   const url = inputPhoto.value;
+   const desc = inputDesc.value;
+   const name = inputName.value;
+   const race = inputRace.value; 
+   list.innerHTML += <li class="list">${url} ${desc} ${name} ${race}</li>
+};
+
+
+
+addCat.addEventListener('click',  addNewKitten);
+  //addNewKitten()
+ /* event.preventDefault(); 
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  console.log (valueDesc, valuePhoto, valueName)
+if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+  error.innerHTML = `¡Uy! parece que has olvidado algo`;
+} else {
+  error.innerHTML = `Muy bien!`; /*aquí hay que añadir los nuevos gatos*/
+
 
 const newFormElement = document.querySelector('.js-new-form');
 const linkNewFormElement = document.querySelector('.js-add');
@@ -55,10 +80,10 @@ function handleClickNewCatForm(event) {
   console.log ('muy bien chicas');
   event.preventDefault();
   if (newFormElement.classList.contains('collapsed')) {
-  newFormElement.classList.remove('collapsed');
+  showNewCatForm()
 }
   else {
-  newFormElement.classList.add('collapsed');
+  hideNewCatForm()
   }
 }
 
