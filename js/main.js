@@ -13,7 +13,7 @@ const btnAdd = document.querySelector(".js-btn-add");
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
-const inputRace = document.querySelector(' .js-input-race');
+const inputRace = document.querySelector('.js-input-race');
 const labelMessageError = document.querySelector('.js-label-error');
 const error = document.querySelector(".js-label-error");
 /*
