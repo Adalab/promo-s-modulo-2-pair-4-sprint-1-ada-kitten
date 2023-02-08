@@ -7,15 +7,15 @@ form.classList.remove('collapsed');*/
 const list= document.querySelector('.js-list'); 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
-const addCat =  document.querySelector('.js-add');
-const ulMenu = document.querySelector(".js-new-form");
+//const addCat =  document.querySelector('.js-add');
+//const ulMenu = document.querySelector(".js-new-form");
 const btnAdd = document.querySelector(".js-btn-add");
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
 const error = document.querySelector(".js-label-error");
-
+/*
 addCat.addEventListener('click', (event) =>  {
   event.preventDefault();
   console.log('Hola');
@@ -25,7 +25,7 @@ addCat.addEventListener('click', (event) =>  {
      ulMenu.classList.add('collapsed');
 }
 });
-
+*/
 btnAdd.addEventListener('click', (event) => {
   event.preventDefault(); 
   const valueDesc = inputDesc.value;
@@ -39,20 +39,28 @@ if (valueDesc === '' || valuePhoto === '' || valueName === '') {
 }
 });
 
-/*const newFormElement = document.querySelector('.js-new-form')*/
+const newFormElement = document.querySelector('.js-new-form');
+const linkNewFormElement = document.querySelector('.js-add');
+
+function showNewCatForm() {
+  newFormElement.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  newFormElement.classList.add('collapsed');
+}
 
 linkNewFormElement.addEventListener('click', handleClickNewCatForm);
 
-/*function handleClickNewCatForm(event) {
+function handleClickNewCatForm(event) {
   console.log ('muy bien chicas');
   event.preventDefault();
   if (newFormElement.classList.contains('collapsed')) {
   newFormElement.classList.remove('collapsed');
 }
-  } else {
+  else {
   newFormElement.classList.add('collapsed');
-}*/
-  
+  }
+}
 
 const kittenOneImage = 'https://dev.adalab.es/gato-siames.webp';
 const kittenOneName = 'Anastacio';
