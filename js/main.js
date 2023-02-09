@@ -144,12 +144,6 @@ plusSymbol.addEventListener('click', handleClickNewCatForm);
 
 /*------------------------------------------------------------------------------*/
 
-
-
-
-
-btnAdd.addEventListener('click', addNewKitten);
-
 function addNewKitten(event) {
   event.preventDefault();
     const valueDesc = inputDesc.value;
@@ -184,3 +178,5 @@ function renderKitten() {
    </li>`;
    return html;
 };*/
+
+btnAdd.addEventListener('click', addNewKitten);
