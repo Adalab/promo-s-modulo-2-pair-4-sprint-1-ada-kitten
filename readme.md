@@ -40,29 +40,29 @@ La solución del ejercicio completo se subirá al final del módulo, si en una s
 
 - [x] 1. Crea el proyecto
 - [ ] 2. Entiende el código html y css del proyecto
-- [ ] 3. **FORMULARIO:** Mostrar
+- [x] 3. **FORMULARIO:** Mostrar
      formulario
-- [ ] 4. **LISTADO:** Listado: Mostrar gatitos desde JS
+- [x] 4. **LISTADO:** Listado: Mostrar gatitos desde JS
 
 #### 2.2 Intro a la programación 2:
 
-- [ ] 1. **LISTADO:** Mejora como se guarda la información
-- [ ] 2. **LISTADO - Bonus:** Nombre de gatitos en mayúsculas
+- [x] 1. **LISTADO:** Mejora como se guarda la información
+- [x] 2. **LISTADO - Bonus:** Nombre de gatitos en mayúsculas
 
 #### 2.3 Condicionales:
 
-- [ ] 1. **FILTRAR:** Búsqueda por descripción.
+- [x] 1. **FILTRAR:** Búsqueda por descripción.
 - [ ] 2. **LISTADO - Bonus:**: ¿Y si no hay raza?.
 
 #### 2.4 Eventos:
 
-- [ ] 1. **FORMULARIO:** Mostrar/ocultar el formulario.
+- [x] 1. **FORMULARIO:** Mostrar/ocultar el formulario.
 - [ ] 2. **FORMULARIO:** Adicionar nuevo gatito.
 - [ ] 3. **FORMULARIO:** Cancelar formulario.
 
 #### 2.5 Funciones I:
 
-- [ ] 1. **FORMULARIO:** Mostrar/ocultar el formulario.
+- [x] 1. **FORMULARIO:** Mostrar/ocultar el formulario.
 - [ ] 2. **FORMULARIO:** Adicionar nuevo gatito.
 - [ ] 3. **LISTADO:** Crear el gatito en HTML
 
