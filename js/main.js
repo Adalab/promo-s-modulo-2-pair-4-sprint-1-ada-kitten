@@ -144,24 +144,43 @@ plusSymbol.addEventListener('click', handleClickNewCatForm);
 
 /*------------------------------------------------------------------------------*/
 
-function renderKitten() {
-   list.innerHTML += `<li class="list"><p>${valuePhoto} ${valueDesc} ${valueName} ${valueName}</p></li>`
-};
 
-function addNewKitten(event) {
-  event.preventDefault();
-    let valueDesc = inputDesc.value;
-    let valuePhoto = inputPhoto.value;
-    let valueName = inputName.value;
-    let valueRace = inputRace.value; 
-    if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-        error.innerHTML="Uy, parece que has olvidado algo!";
-    } else {
-        renderKitten()
-    }
-}
+
+
 
 btnAdd.addEventListener('click', addNewKitten);
 
+function addNewKitten(event) {
+  event.preventDefault();
+    const valueDesc = inputDesc.value;
+    /*const valuePhoto = inputPhoto.value;*/
+    const valueName = inputName.value;
+    const valueRace = inputRace.value; 
+    if (valueDesc === '' || valuePhoto === '' || valueName === '' || valueRace === '') {
+        error.innerHTML="Uy, parece que has olvidado algo!";
+    } else {
+        list.innerHTML += renderKitten()
+    }
+};
 
+function renderKitten() {
+  console.log('holaaa')
+   const html = `<li class="list">
+   <img src="${valuePhoto}" alt="Quinoa y Pimienta" />
+   <p>${valueDesc}</p> 
+   <h2>${valueName}</h2>
+   <p>${valueRace}</p>
+   </li>`;
+   return html;
+};
 
+/*const renderKitten = (pet) => {
+  console.log('holaaa')
+   const html = `<li class="list">
+   <img src="${valuePhoto}" alt="Quinoa y Pimienta" />
+   <p>${valueDesc}</p> 
+   <h2>${valueName}</h2>
+   <p>${valueRace}</p>
+   </li>`;
+   return html;
+};*/
