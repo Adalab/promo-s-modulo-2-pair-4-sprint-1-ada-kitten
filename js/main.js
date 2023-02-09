@@ -143,6 +143,7 @@ function handleClickNewCatForm(event) {
 plusSymbol.addEventListener('click', handleClickNewCatForm);
 
 /*------------------------------------------------------------------------------*/
+
 function renderKitten() {
    list.innerHTML += `<li class="list"><p>${valuePhoto} ${valueDesc} ${valueName} ${valueName}</p></li>`
 };
