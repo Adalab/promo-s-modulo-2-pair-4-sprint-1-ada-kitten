@@ -105,13 +105,12 @@ list.innerHTML=+ kittenThree
 
 //const ulMenu = document.querySelector(".js-new-form");
 //const labelMessageError = document.querySelector('.js-label-error');
+//const descrSearchText = descInput.value;
+//const addCat =  document.querySelector('.js-add');
 
 const list= document.querySelector('.js-list');
 const descInput = document.querySelector('.js_in_search_desc');
-const descrSearchText = descInput.value;
 
-
-const addCat =  document.querySelector('.js-add');
 const btnAdd = document.querySelector(".js-btn-add");
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
@@ -119,26 +118,10 @@ const inputName = document.querySelector('.js-input-name');
 const inputRace = document.querySelector('.js-input-race');
 const error = document.querySelector(".js-label-error");
 
-//COLAPSABLE MENU 1st ATTEMPT//
+const plusSymbol = document.querySelector('.js-cats');
+const newFormElement = document.querySelector('.js-new-form')
 
-/*
-addCat.addEventListener('click', (event) =>  {
-  event.preventDefault();
-  console.log('Hola');
-  if (ulMenu.classList.contains('collapsed')) {
-       ulMenu.classList.remove('collapsed');
-} else {
-     ulMenu.classList.add('collapsed');
-}
-});
-*/
-
-//COLAPSABLE MENU 2ND ATTEMPT//
-
-//let formElement = document.querySelector(".js-new-form");
-//let formCollapsed = document.querySelector(".js-new-form1");
-
-const newFormElement = document.querySelector('.js-new-form');
+/*--------------------------------------------------------------------*/
 
 function showNewCatForm() {
   newFormElement.classList.remove('collapsed');
@@ -151,79 +134,33 @@ function handleClickNewCatForm(event) {
   event.preventDefault();
   console.log('Muy bien chiquis!')
   if (newFormElement.classList.contains('collapsed')) {
-      newFormElement.classList.remove('collapsed');
+    showNewCatForm()
     } else {
-      newFormElement.classList.add('collapsed');
+    hideNewCatForm()  
     }
 };
 
-/*function handleClickNewCatForm(event) {
-  event.preventDefault();
-  console.log('Muy bien chiquis!')
-  if (newFormElement.classList.contains('collapsed')) {
-        showNewCatForm()
-    } else {
-        hideNewCatForm()
-    }
-};*/
-/*
-newFormElement.addEventListener('click', handleClickNewCatForm);
-*/
-/*
+plusSymbol.addEventListener('click', handleClickNewCatForm);
+
+/*------------------------------------------------------------------------------*/
+function renderKitten() {
+   list.innerHTML += `<li class="list"><p>${valuePhoto} ${valueDesc} ${valueName} ${valueName}</p></li>`
+};
 
 function addNewKitten(event) {
-  event.preventDefault(); 
-  const valueDesc = inputDesc.value;
-  const valuePhoto = inputPhoto.value;
-  const valueName = inputName.value;
-  console.log (valueDesc, valuePhoto, valueName)
-if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-  error.innerHTML = `¡Uy! parece que has olvidado algo`;
-} else {
-  error.innerHTML = `Muy bien!`; 
-}
-};
-
-
-function renderKitten(url, desc, name, race) {
-   const url = inputPhoto.value;
-   const desc = inputDesc.value;
-   const name = inputName.value;
-   const race = inputRace.value; 
-   list.innerHTML += <li class="list">${url} ${desc} ${name} ${race}</li>
-};
-
-
-
-addCat.addEventListener('click', addNewKitten);
-  addNewKitten(event)
-  event.preventDefault(); 
-  const valueDesc = inputDesc.value;
-  const valuePhoto = inputPhoto.value;
-  const valueName = inputName.value;
-  console.log (valueDesc, valuePhoto, valueName)
-if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-  error.innerHTML = `¡Uy! parece que has olvidado algo`;
-} else {
-  error.innerHTML = `Muy bien!`; /*aquí hay que añadir los nuevos gatos*/
-
-/*
-const newFormElement = document.querySelector('.js-new-form');
-const linkNewFormElement = document.querySelector('.js-add');
-*/
-
-
-/*
-function handleClickNewCatForm(event) {
-  console.log ('muy bien chicas');
   event.preventDefault();
-  if (newFormElement.classList.contains('collapsed')) {
-  showNewCatForm()
-}
-  else {
-  hideNewCatForm()
-  }
+    let valueDesc = inputDesc.value;
+    let valuePhoto = inputPhoto.value;
+    let valueName = inputName.value;
+    let valueRace = inputRace.value; 
+    if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+        error.innerHTML="Uy, parece que has olvidado algo!";
+    } else {
+        renderKitten()
+    }
 }
 
-linkNewFormElement.addEventListener('click', handleClickNewCatForm);
+btnAdd.addEventListener('click', addNewKitten);
+
+
 
