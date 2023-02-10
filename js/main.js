@@ -81,13 +81,35 @@ const kittenOne = `<li>${kittenOneImg} ${kittenOneName} ${kittenOneRace} ${kitte
 const kittenTwo = `<li>${kittenTwoImg} ${kittenTwoName} ${kittenTwoRace} ${kittenTwoDesc}</li>`;
 const kittenThree = `<li>${kittenThreeImg} ${kittenThreeName} ${kittenThreeRace} ${kittenThreeDesc}</li>`;
 
-/*
-list.innerHTML = kittenOne + kittenTwo + kittenThree;
-*/
 
-/*
+
+
+
+
+
+//const ulMenu = document.querySelector(".js-new-form");
+//const labelMessageError = document.querySelector('.js-label-error');
+//const descrSearchText = descInput.value;
+//const addCat =  document.querySelector('.js-add');
+
+const list= document.querySelector('.js-list');
 const descInput = document.querySelector('.js_in_search_desc');
+const raceIput = document.querySelector('.js-type-cat');
 const descrSearchText = descInput.value;
+
+const btnCancel = document.querySelector('.js-btn-cancel');
+
+const btnAdd = document.querySelector(".js-btn-add");
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const inputRace = document.querySelector('.js-input-race');
+const error = document.querySelector(".js-label-error");
+
+const plusSymbol = document.querySelector('.js-cats');
+const newFormElement = document.querySelector('.js-new-form')
+
+let html = '';
 
 if( kittenOneDesc.includes(descrSearchText) ) {
    list.innerHTML= kittenOne
@@ -101,25 +123,27 @@ if( kittenThreeDesc.includes(descrSearchText) ) {
 list.innerHTML=+ kittenThree
 }
 
-*/
+if (kittenOneRace === "") {
+  html = `Uy que despiste, no sabemos su raza`;
+} else {
+  console.log('race check')
+  html = kittenOneRace;
+}
 
-//const ulMenu = document.querySelector(".js-new-form");
-//const labelMessageError = document.querySelector('.js-label-error');
-//const descrSearchText = descInput.value;
-//const addCat =  document.querySelector('.js-add');
+/*--------------------------------------------------------------------*/
 
-const list= document.querySelector('.js-list');
-const descInput = document.querySelector('.js_in_search_desc');
+const cancelNewKitten = (event) => {
+  if(valueDesc !=='' || valuePhoto!== '' || valueName!=='')
+  {     valueDesc === '';
+        valuePhoto === ''; 
+        valueName === '';
+        formCollapsed.classList.add('collapsed');
+    }else{
+        formCollapsed.classList.remove('collapsed');
+    }
+};
 
-const btnAdd = document.querySelector(".js-btn-add");
-const inputDesc = document.querySelector('.js-input-desc');
-const inputPhoto = document.querySelector('.js-input-photo');
-const inputName = document.querySelector('.js-input-name');
-const inputRace = document.querySelector('.js-input-race');
-const error = document.querySelector(".js-label-error");
-
-const plusSymbol = document.querySelector('.js-cats');
-const newFormElement = document.querySelector('.js-new-form')
+btnCancel.addEventListener('click', cancelNewKitten);
 
 /*--------------------------------------------------------------------*/
 
@@ -147,23 +171,25 @@ plusSymbol.addEventListener('click', handleClickNewCatForm);
 function addNewKitten(event) {
   event.preventDefault();
     const valueDesc = inputDesc.value;
-    /*const valuePhoto = inputPhoto.value;*/
+    const valuePhoto = inputPhoto.value;
     const valueName = inputName.value;
     const valueRace = inputRace.value; 
     if (valueDesc === '' || valuePhoto === '' || valueName === '' || valueRace === '') {
+      console.log('valuePhoto, valueDesc, valueName, valueRace');
         error.innerHTML="Uy, parece que has olvidado algo!";
     } else {
-        list.innerHTML += renderKitten()
+      console.log('Maravilloso todo');
+        list.innerHTML += renderKitten(valuePhoto, valueDesc, valueName, valueRace)
     }
 };
 
-function renderKitten() {
+function renderKitten(valuePhoto, valueDesc, valueName, valueRace) {
   console.log('holaaa')
    const html = `<li class="list">
-   <img src="${valuePhoto}" alt="Quinoa y Pimienta" />
-   <p>${valueDesc}</p> 
-   <h2>${valueName}</h2>
-   <p>${valueRace}</p>
+   <img class="card_img" src="${valuePhoto}" alt="Photo Gatito" />
+   <h3 class="card_title">${valueName.toUpperCase()}</h3>
+   <h4 class="card_race>${valueRace}</h4>
+   <p class="card_description">${valueDesc}</p> 
    </li>`;
    return html;
 };
@@ -180,3 +206,5 @@ function renderKitten() {
 };*/
 
 btnAdd.addEventListener('click', addNewKitten);
+
+list.innerHTML = kittenOne + kittenTwo + kittenThree;
