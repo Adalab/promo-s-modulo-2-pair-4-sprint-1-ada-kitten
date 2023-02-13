@@ -81,18 +81,12 @@ const kittenOne = `<li>${kittenOneImg} ${kittenOneName} ${kittenOneRace} ${kitte
 const kittenTwo = `<li>${kittenTwoImg} ${kittenTwoName} ${kittenTwoRace} ${kittenTwoDesc}</li>`;
 const kittenThree = `<li>${kittenThreeImg} ${kittenThreeName} ${kittenThreeRace} ${kittenThreeDesc}</li>`;
 
-
-
-
-
-
-
 //const ulMenu = document.querySelector(".js-new-form");
 //const labelMessageError = document.querySelector('.js-label-error');
 //const descrSearchText = descInput.value;
 //const addCat =  document.querySelector('.js-add');
 
-const list= document.querySelector('.js-list');
+const List= document.querySelector('.js-list');
 const descInput = document.querySelector('.js_in_search_desc');
 const raceIput = document.querySelector('.js-type-cat');
 const descrSearchText = descInput.value;
@@ -123,27 +117,12 @@ if( kittenThreeDesc.includes(descrSearchText) ) {
 list.innerHTML=+ kittenThree
 }
 
-if (kittenOneRace === "") {
+/*if (kittenOneRace === "") {
   html = `Uy que despiste, no sabemos su raza`;
 } else {
   console.log('race check')
   html = kittenOneRace;
-}
-
-/*--------------------------------------------------------------------*/
-
-const cancelNewKitten = (event) => {
-  if(valueDesc !=='' || valuePhoto!== '' || valueName!=='')
-  {     valueDesc === '';
-        valuePhoto === ''; 
-        valueName === '';
-        formCollapsed.classList.add('collapsed');
-    }else{
-        formCollapsed.classList.remove('collapsed');
-    }
-};
-
-btnCancel.addEventListener('click', cancelNewKitten);
+}*/
 
 /*--------------------------------------------------------------------*/
 
