@@ -87,19 +87,16 @@ const filterKitten = (event) => {
   list.innerHTML = "";
   const descrSearchText = input_search_desc.value;
   if (kittenData_1.desc.includes(descrSearchText)) {
-    // list.innerHTML += kittenData_1;
     renderKittenSearch(kittenData_1);
     paragraph.innerHTML = `Tu gato es el 1`;}
 
 
   if (kittenData_2.desc.includes(descrSearchText)) {
-    // list.innerHTML += kittenData_2;
     renderKittenSearch(kittenData_2);
      paragraph.innerHTML = 'Tu gato es el 2';}
 
 
   if (kittenData_3.desc.includes(descrSearchText)) {
-    // list.innerHTML += kittenData_3;
     renderKittenSearch(kittenData_3);
     paragraph.innerHTML = 'Tu gato es el 3';
   }
